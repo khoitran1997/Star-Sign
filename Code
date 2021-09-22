@@ -1,0 +1,75 @@
+
+/**
+* StarSign
+*
+* The program will show a right triangle and a pyramid pattern of asterisks
+* Khoi Tran
+* 09/23/2020
+* CMSC 255/Section 002
+*/
+
+import java.util.Scanner;
+
+public class StarSign {
+
+	public static void main (String [] args) {
+
+		Scanner input = new Scanner (System.in);
+		String quit = "quit";
+
+		do {
+			
+			//Ask user for radius input
+			System.out.println("Enter the radius of the star:");
+			int r = input.nextInt();
+			//Ask user for base input
+			System.out.println("Enter the base of the pyramid:");
+			int b = input.nextInt();
+			//Ask user for height input
+			System.out.println("Enter the height of the pyramid:");
+			int h = input.nextInt();
+
+			//Ask user for string input 
+			System.out.println("Enter the string you would like on your sign: ");
+			String str = input.nextLine();
+			String str1 = input.nextLine();
+
+			//Compute the area of the star
+			double starArea = (5 * (Math.pow(r, 2))) / ((Math.tan(72)) + (Math.tan(54)));
+			
+
+			//Compute the area for the pyramid
+			double pyramidArea = Math.pow(b, 2) + 2 * b * Math.sqrt(Math.pow(b, 2) / 4 + Math.pow(h, 2));
+			
+
+			//Combine both areas for total of both areas
+			double totalArea = starArea + pyramidArea;
+			
+
+			//Compute the total of area price
+			double totalAreaPrice = totalArea * 3.45;
+			
+
+			//Replace spaces in string with non blank character
+			
+
+			//Count the characters in the string and calculate them
+			double totalString = 2.35 * str1.replace(" ", "").length();
+			
+			//Combine both prices and display it
+			double totalCost = totalAreaPrice + totalString;
+			System.out.printf("$%.2f\n", totalCost);
+			
+			//Ask user if they would like to continue or quit
+			System.out.println("Would you like to create another sign? Enter quit to exit.");
+			quit = input.nextLine();
+		} while (!quit.equals("quit"));
+	}
+}
+STUDENT
+Khoi Tran
+AUTOGRADER SCORE
+45.0 / 45.0
+QUESTION 2
+(no title)
+22.5 / 25.0 pts
